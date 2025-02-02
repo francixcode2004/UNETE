@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55a3ca65-740f-40aa-9e49-fa2d76cea832" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/config/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/controller/userController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routes/userRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/nginx/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/components/Footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/components/Navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/components/SuccessModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/components/ui/Button.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/components/ui/Input.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/components/ui/Label.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Admin.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/AdminReport.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Contact.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Orders.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Products.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Register.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/ToObject.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/ToObject.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/test/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/public/vite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/public/vite.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/components/BarraBusqueda.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/components/BarraNavegacion.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/components/Carrito.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/components/LoginForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/components/PiePagina.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/components/Productos.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/components/ProductosDestacados.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/components/RegisterForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Autenticacion.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Inventario.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Principal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSX File" />
+        <option value="Dockerfile" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2sS6VDxJJKuK8kYDC1QFlfc5SnF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.yml.my-sql: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;22.12.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.12.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/franc/Desktop/6 semestre/analisis y diseño de sistemas/codigo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\franc\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\franc\Desktop\6 semestre\analisis y diseño de sistemas\codigo\front_unete" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yml.my-sql: Compose Deployment">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.my-sql: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="services">
+            <list>
+              <option value="my-sql" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.my-sql: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-WS-242.21829.149" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55a3ca65-740f-40aa-9e49-fa2d76cea832" name="Changes" comment="" />
+      <created>1738436664838</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738436664838</updated>
+      <workItem from="1738436674329" duration="67000" />
+      <workItem from="1738439644255" duration="11439000" />
+      <workItem from="1738469838727" duration="269000" />
+      <workItem from="1738470148882" duration="2871000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="nginx.conf" />
+  </component>
+</project>
