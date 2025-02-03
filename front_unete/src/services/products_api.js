@@ -56,6 +56,7 @@ export async function editProduct(productId, product) {
         if (product.category) formData.append("category", product.category);
         // Si se envía nueva imagen, la agregamos
         if (product.image) formData.append("imagen", product.image);
+        const token = localStorage.getItem("token");
         if (!token) {
             return { success: false, error: "No se encontró el token de autenticación." };
         }
@@ -74,6 +75,7 @@ export async function editProduct(productId, product) {
 // Eliminar un producto
 export async function deleteProduct(productId) {
     try {
+        const token = localStorage.getItem("token");
         if (!token) {
             return { success: false, error: "No se encontró el token de autenticación." };
         }

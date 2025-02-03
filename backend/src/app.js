@@ -3,6 +3,7 @@ import userRoutes from "./routes/userRoutes.js";
 import productsRoutes from "./routes/productsRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
+import dashboardRoutes from "./routes/dashboardRoutes.js";
 import cors from "cors"
 import { fileURLToPath } from 'url';
 import path from "path";
@@ -17,4 +18,5 @@ app.use("/api/", userRoutes);
 app.use("/api/",productsRoutes);
 app.use("/api/",messageRoutes)
 app.use("/api/",orderRoutes)
+app.use("/api/",dashboardRoutes)
 export default app;

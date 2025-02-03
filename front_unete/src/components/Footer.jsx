@@ -46,7 +46,7 @@ function Footer() {
                         <h3 className="text-lg font-semibold mb-4">Síguenos</h3>
                         <div className="flex space-x-4">
                             <SocialLink
-                                href="https://github.com/franciscolopez"
+                                href="https://github.com/francixcode2004/UNETE"
                                 icon={Github}
                                 label="GitHub"
                             />
@@ -56,7 +56,7 @@ function Footer() {
                                 label="Facebook"
                             />
                             <SocialLink
-                                href="https://instagram.com/unete"
+                                href="https://www.instagram.com/francixx_985/?igsh=MWVmZ3Vqbzl6c2F2dw%3D%3D#"
                                 icon={Instagram}
                                 label="Instagram"
                             />

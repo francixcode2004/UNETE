@@ -3,7 +3,20 @@ import PropTypes from 'prop-types';
 import { Phone, Mail, User } from 'lucide-react';
 import { ToastNotification } from "../components/ToastNotification";
 import { ToastContainer } from 'react-toastify';
-import {uploadmessage} from "../services/messages_api.js";
+import { uploadmessage } from "../services/messages_api.js";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+// Importa Leaflet y configura los íconos (opcional, debido a problemas con el default marker)
+import L from 'leaflet';
+
+// Configuración de ícono para los markers de Leaflet (esto evita problemas con la carga de imágenes)
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+});
+
 // ContactInfo Component
 function ContactInfo({ icon: Icon, label, value }) {
     return (
@@ -39,6 +52,25 @@ CompanyHistory.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
 };
+
+// CompanyMap Component
+function CompanyMap() {
+    // Coordenadas aproximadas para "408 Av. Libertador Simón Bolívar, Quito, Pichincha"
+    const position = [-0.063606, -78.355049];
+    return (
+        <MapContainer center={position} zoom={16} style={{ height: "474px", width: "100%" }}>
+            <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution="&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors"
+            />
+            <Marker position={position}>
+                <Popup>
+                    408 Av. Libertador Simón Bolívar<br /> Quito, Pichincha
+                </Popup>
+            </Marker>
+        </MapContainer>
+    );
+}
 
 // ContactForm Component
 function ContactForm({ onSubmit }) {
@@ -125,13 +157,13 @@ ContactForm.propTypes = {
 
 // Main ContactPage Component
 function ContactPage() {
-    const handleSubmit =async (formData) => {
-        const response=await uploadmessage(formData.name,formData.email,formData.message);
-        if (!response.success){
-            ToastNotification({type:"error",message:response.error})
-            return
+    const handleSubmit = async (formData) => {
+        const response = await uploadmessage(formData.name, formData.email, formData.message);
+        if (!response.success) {
+            ToastNotification({ type: "error", message: response.error });
+            return;
         }
-        ToastNotification({type:"success",message:response.message})
+        ToastNotification({ type: "success", message: response.message });
     };
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -149,24 +181,31 @@ function ContactPage() {
                         <ContactInfo
                             icon={Phone}
                             label="Teléfono"
-                            value="+52 (555) 123-4567"
+                            value="+593 0986266139"
                         />
                         <ContactInfo
                             icon={Mail}
                             label="Correo electrónico"
-                            value="contacto@unete.com"
+                            value="patricia_espinoza7@gmail.com"
                         />
                         <ContactInfo
                             icon={User}
                             label="Horario de atención"
-                            value="Lun - Vie: 9:00 - 18:00"
+                            value="Lun - Vie: 8:00 - 19:00"
                         />
                     </div>
                 </div>
-                <div className="max-w-2xl mx-auto">
-                    <ContactForm onSubmit={handleSubmit} />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div>
+                        <ContactForm onSubmit={handleSubmit} />
+                    </div>
+                    <div>
+                        {/* Muestra el mapa de la ubicación de la empresa */}
+                        <CompanyMap />
+                    </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }
