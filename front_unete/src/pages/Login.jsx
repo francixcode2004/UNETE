@@ -32,6 +32,7 @@ export default function Login() {
         // Guardamos el estado de autenticación y el rol en localStorage
         localStorage.setItem("auth", "true");
         localStorage.setItem("role", response.role);
+        localStorage.setItem("token",response.token)
         // Redirigimos según el rol
         
         ToastNotification({type:"success",message:"Bienvenido"})

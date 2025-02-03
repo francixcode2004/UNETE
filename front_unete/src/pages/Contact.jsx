@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Phone, Mail, User } from 'lucide-react';
-
+import { ToastNotification } from "../components/ToastNotification";
+import { ToastContainer } from 'react-toastify';
+import {uploadmessage} from "../services/messages_api.js";
 // ContactInfo Component
 function ContactInfo({ icon: Icon, label, value }) {
     return (
@@ -123,11 +125,14 @@ ContactForm.propTypes = {
 
 // Main ContactPage Component
 function ContactPage() {
-    const handleSubmit = (formData) => {
-        console.log('Form submitted:', formData);
-        // Handle form submission logic here
+    const handleSubmit =async (formData) => {
+        const response=await uploadmessage(formData.name,formData.email,formData.message);
+        if (!response.success){
+            ToastNotification({type:"error",message:response.error})
+            return
+        }
+        ToastNotification({type:"success",message:response.message})
     };
-
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -135,13 +140,11 @@ function ContactPage() {
                     <h1 className="text-3xl font-bold text-gray-900 mb-4">Contáctanos</h1>
                     <p className="text-lg text-gray-600">Estamos aquí para ayudarte</p>
                 </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <CompanyHistory
                         title="Nuestra Historia"
                         description="UNETE nació en 2020 con la visión de revolucionar la industria de la belleza. Desde entonces, nos hemos dedicado a ofrecer productos de alta calidad y un servicio excepcional a nuestros clientes. Nuestra pasión por la innovación y el compromiso con la satisfacción del cliente nos han convertido en líderes del mercado."
                     />
-
                     <div className="space-y-4">
                         <ContactInfo
                             icon={Phone}
@@ -160,7 +163,6 @@ function ContactPage() {
                         />
                     </div>
                 </div>
-
                 <div className="max-w-2xl mx-auto">
                     <ContactForm onSubmit={handleSubmit} />
                 </div>

@@ -13,4 +13,5 @@ router.post("/login", loginUser); // Inicio de sesión
 // Rutas protegidas (requieren autenticación)
 router.get("/users", authenticateToken, getUsers); // Obtener usuarios
 router.post("/logout", authenticateToken, logoutUser); // Cerrar sesión
+
 export default router;

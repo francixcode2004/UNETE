@@ -5,55 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55a3ca65-740f-40aa-9e49-fa2d76cea832" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/config/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/controller/userController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/routes/userRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/nginx/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/components/Footer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/components/Navbar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/components/SuccessModal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/components/ui/Button.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/components/ui/Input.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/components/ui/Label.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Admin.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/AdminReport.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Contact.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Login.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Orders.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Products.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/pages/Register.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/controller/messageController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/controller/productsController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/middleware/multerConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routes/messageRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routes/productsRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_unete/src/services/messages_api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/ToObject.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/ToObject.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/es-object-atoms/test/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/public/vite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/public/vite.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/components/BarraBusqueda.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/components/BarraNavegacion.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/components/Carrito.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/components/LoginForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/components/PiePagina.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/components/Productos.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/components/ProductosDestacados.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/components/RegisterForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Autenticacion.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Inventario.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Principal.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/userRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/pages/Admin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/pages/Contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/pages/Login.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +69,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\franc\Desktop\6 semestre\analisis y diseño de sistemas\codigo\backend" />
       <recent name="C:\Users\franc\Desktop\6 semestre\analisis y diseño de sistemas\codigo\front_unete" />
     </key>
   </component>
@@ -160,6 +128,7 @@
       <workItem from="1738439644255" duration="11439000" />
       <workItem from="1738469838727" duration="269000" />
       <workItem from="1738470148882" duration="2871000" />
+      <workItem from="1738528196189" duration="21246000" />
     </task>
     <servers />
   </component>
@@ -167,6 +136,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="nginx.conf" />
   </component>
 </project>
