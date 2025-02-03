@@ -9,6 +9,7 @@ import {addProduct,
 import {getMessages,
     deleteMessage
 } from "../services/messages_api.js";
+import {getAllOrders} from "../services/order_api.js";
 const categories = ["Ropa", "Maquillaje"];
 import { ToastNotification } from "../components/ToastNotification";
 import { ToastContainer } from 'react-toastify';
@@ -459,11 +460,25 @@ function ProductsTable() {
 
 // Orders Table Component
 function OrdersTable() {
-    const [orders] = useState([
-        { id: 1, customer: "Juan Pérez", products: ["Pincel", "Labial"], total: 25, status: "Pendiente", date: "2024-03-15" },
-        { id: 2, customer: "María García", products: ["Base"], total: 20, status: "Enviado", date: "2024-03-14" },
-        { id: 3, customer: "Carlos López", products: ["Labial", "Base"], total: 35, status: "Entregado", date: "2024-03-13" },
-    ]);
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        // Llamar a la API cuando el componente se monta
+        const fetchOrders = async () => {
+            try {
+                const { success, orders } = await getAllOrders();
+                if (success) {
+                    setOrders(orders);
+                } else {
+                    console.error("No se pudieron obtener los pedidos.");
+                }
+            } catch (error) {
+                console.error("Error al obtener los pedidos:", error);
+            }
+        };
+
+        fetchOrders();
+    }, []); // Este efecto solo se ejecuta al montar el componente
 
     return (
         <div>
@@ -484,13 +499,13 @@ function OrdersTable() {
                 </TableHeader>
                 <TableBody>
                     {orders.map((order) => (
-                        <TableRow key={order.id}>
-                            <TableCell>{order.id}</TableCell>
-                            <TableCell>{order.customer}</TableCell>
-                            <TableCell>{order.products.join(", ")}</TableCell>
-                            <TableCell>${order.total}</TableCell>
-                            <TableCell>{order.status}</TableCell>
-                            <TableCell>{order.date}</TableCell>
+                        <TableRow key={order.id_pedido}>
+                            <TableCell>{order.id_pedido}</TableCell>
+                            <TableCell>{order.usuario_nombre}</TableCell>
+                            <TableCell>{order.producto_nombre}</TableCell>
+                            <TableCell>${order.total_a_pagar}</TableCell>
+                            <TableCell>{order.status || "Pendiente"}</TableCell> {/* Puedes modificar el estado si tienes esa información */}
+                            <TableCell>{new Date(order.fecha_pedido).toLocaleDateString()}</TableCell> {/* Formatear la fecha */}
                         </TableRow>
                     ))}
                 </TableBody>

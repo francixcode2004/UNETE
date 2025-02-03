@@ -1,13 +1,17 @@
-// Star Rating Component
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { ShoppingCart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { getProducts } from "../services/products_api.js";
 
+// Star Rating Component
 function StarRating({ rating }) {
     return (
         <div className="flex">
             {[1, 2, 3, 4, 5].map((star) => (
                 <svg
                     key={star}
-                    className={`w-4 h-4 ${star <= rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                    className={`w-5 h-5 ${star <= rating ? "text-yellow-400" : "text-gray-300"}`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                 >
@@ -22,22 +26,30 @@ StarRating.propTypes = {
     rating: PropTypes.number.isRequired,
 };
 
-// Product Card Component
-function ProductCard({ name, price, rating, imageUrl }) {
+// Product Card Component (dentro del mismo archivo)
+function ProductCard({ name, price, stock, imageUrl, category, onAddToCart }) {
     return (
-        <div className="bg-white p-4 rounded-lg shadow-sm max-w-xs">
-            <img
-                src={imageUrl}
-                alt={name}
-                className="w-full h-48 object-cover mb-4"
-            />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">{name}</h3>
-            <div className="flex items-center justify-between mb-3">
-                <span className="text-gray-900">${price}</span>
-                <StarRating rating={rating} />
+        <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <img src={imageUrl || "/placeholder.svg"} alt={name} className="w-full h-56 object-cover mb-4 rounded" />
+            <div className="mb-2">
+        <span
+            className={`text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full ${
+                category.toLowerCase() === "ropa" ? "text-pink-600 bg-pink-200" : "text-purple-600 bg-purple-200"
+            }`}
+        >
+          {category}
+        </span>
             </div>
-            <button className="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-50 transition-colors">
-                Añadir
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">{name}</h3>
+            <div className="flex items-center justify-between mb-4">
+                <span className="text-2xl font-bold text-indigo-600">${price.toFixed(2)}</span>
+                <span className="text-sm text-gray-600">Stock: {stock}</span>
+            </div>
+            <button
+                onClick={onAddToCart}
+                className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors duration-300"
+            >
+                Añadir al carrito
             </button>
         </div>
     );
@@ -46,46 +58,129 @@ function ProductCard({ name, price, rating, imageUrl }) {
 ProductCard.propTypes = {
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    rating: PropTypes.number.isRequired,
+    stock: PropTypes.number.isRequired,
     imageUrl: PropTypes.string.isRequired,
-};
-
-// Cart Total Component
-function CartTotal({ total }) {
-    return (
-        <div className="flex items-center justify-end space-x-2">
-            <svg
-                className="w-5 h-5 text-gray-600"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
-                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            <span className="font-medium">Total: ${total}</span>
-        </div>
-    );
-}
-
-CartTotal.propTypes = {
-    total: PropTypes.number.isRequired,
+    category: PropTypes.string.isRequired,
+    onAddToCart: PropTypes.func.isRequired,
 };
 
 // Main Product Page Component
 function ProductPage() {
+    const [searchTerm, setSearchTerm] = useState("");
+    const [categoryFilter, setCategoryFilter] = useState("todos");
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [cart, setCart] = useState([]); // Estado para el carrito
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            setLoading(true);
+            const response = await getProducts();
+            if (response.success) {
+                // Adaptamos los datos al formato esperado
+                const formattedProducts = response.products.map((product) => ({
+                    id: product.id_producto,
+                    name: product.nombre,
+                    price: Number.parseFloat(product.precio),
+                    stock: product.stock,
+                    imageUrl: `http://localhost:3000${product.imagen}`,
+                    category: product.categoria,
+                }));
+                setProducts(formattedProducts);
+            }
+            setLoading(false);
+        };
+        fetchProducts();
+    }, []);
+
+    const filteredProducts = products.filter(
+        (product) =>
+            product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+            (categoryFilter === "todos" || product.category === categoryFilter)
+    );
+
+    const handleCartClick = () => {
+        navigate("/order", { state: { cart } });
+    };
+
+    // Función para añadir un producto al carrito
+    const handleAddToCart = (product) => {
+        setCart((prevCart) => {
+            const index = prevCart.findIndex((item) => item.id === product.id);
+            let updatedCart;
+            if (index >= 0) {
+                // Si el producto ya está en el carrito, incrementa la cantidad
+                updatedCart = prevCart.map((item) =>
+                    item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+                );
+            } else {
+                // Si no existe, agrégalo con cantidad 1
+                updatedCart = [...prevCart, { ...product, quantity: 1 }];
+            }
+            console.log("Carrito:", updatedCart);
+            return updatedCart;
+        });
+    };
+
+    // Calcular la cantidad total de items en el carrito
+    const totalCartItems = cart.reduce((total, item) => total + item.quantity, 0);
+
+    if (loading) {
+        return <p className="text-center text-gray-500">Cargando productos...</p>;
+    }
+
     return (
-        <div className="min-h-screen bg-gray-50">
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <ProductCard
-                        name="Pincel"
-                        price={10}
-                        rating={4}
-                        imageUrl="https://images.unsplash.com/photo-1615914143778-1a1a6e50c5dd?auto=format&fit=crop&w=500&q=80"
-                    />
+        <div className="bg-gray-50 py-8 relative">
+            {/* Botón del carrito con badge de cantidad */}
+            <div className="absolute top-4 right-4 z-10">
+                <button
+                    onClick={handleCartClick}
+                    className="relative bg-indigo-600 text-white p-2 rounded-full hover:bg-indigo-700 transition-colors duration-300"
+                >
+                    <ShoppingCart size={24} />
+                    {totalCartItems > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
+              {totalCartItems}
+            </span>
+                    )}
+                </button>
+            </div>
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 className="text-3xl font-extrabold text-gray-900 mb-8">Nuestros Productos</h1>
+
+                <div className="mb-8 flex flex-col sm:flex-row justify-between items-center">
+                    <div className="mb-4 sm:mb-0 w-full sm:w-auto">
+                        <input
+                            type="text"
+                            placeholder="Buscar productos..."
+                            className="w-full sm:w-64 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                    </div>
+                    <div className="w-full sm:w-auto">
+                        <select
+                            className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            value={categoryFilter}
+                            onChange={(e) => setCategoryFilter(e.target.value)}
+                        >
+                            <option value="todos">Todos los productos</option>
+                            <option value="Ropa">Ropa</option>
+                            <option value="Maquillaje">Maquillaje</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    {filteredProducts.map((product) => (
+                        <ProductCard
+                            key={product.id}
+                            {...product}
+                            onAddToCart={() => handleAddToCart(product)}
+                        />
+                    ))}
                 </div>
             </main>
         </div>

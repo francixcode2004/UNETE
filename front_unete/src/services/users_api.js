@@ -7,8 +7,8 @@ export async function login(user, password) {
             username:user,
             password:password }
         );
-        const { token, role } = response.data;
-        return { success: true, token, role };
+        const { token, role ,name} = response.data;
+        return { success: true, token, role ,name};
     } catch (error) {
         console.error("Error al iniciar sesión:", error.response?.data?.error || error.message);
         return { success: false, error: error.response?.data?.error || "Error al conectar con el servidor" };

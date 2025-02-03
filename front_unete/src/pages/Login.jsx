@@ -25,14 +25,13 @@ export default function Login() {
     try {
       // Realizamos la petición de login de manera asincrónica
       const response = await login(formData.username, formData.password);
-      
-      
       // Verificamos si la respuesta fue exitosa
       if (response.success) {
         // Guardamos el estado de autenticación y el rol en localStorage
         localStorage.setItem("auth", "true");
         localStorage.setItem("role", response.role);
-        localStorage.setItem("token",response.token)
+        localStorage.setItem("token",response.token);
+        localStorage.setItem("id_user",response.name);
         // Redirigimos según el rol
         
         ToastNotification({type:"success",message:"Bienvenido"})

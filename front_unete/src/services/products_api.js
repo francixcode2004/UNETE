@@ -13,14 +13,10 @@ export async function addProduct(product) {
         if (product.image) {
             formData.append("imagen", product.image);
         }
-        if (!token) {
-            return { success: false, error: "No se encontró el token de autenticación." };
-        }
         // Realizar la solicitud POST para crear el producto
         const response = await axios.post(`${API_URL}/product`, formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
-                "Authorization": `Bearer ${token}`
             },
         });
         return { success: true, product: response.data };

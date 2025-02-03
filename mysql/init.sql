@@ -22,6 +22,8 @@ CREATE TABLE pedidos (
     id_usuario INT NOT NULL,
     id_producto INT NOT NULL,
     cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10,2) NOT NULL,
+    total DECIMAL(10,2) GENERATED ALWAYS AS (cantidad * precio_unitario) STORED,
     fecha_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE,
     FOREIGN KEY (id_producto) REFERENCES productos(id_producto) ON DELETE CASCADE
@@ -40,3 +42,13 @@ INSERT INTO usuarios (nombre, contrasena, role)
 VALUES
 ('francix', 'admin123', 'admin'),
 ('usuario1', 'usuario123', 'usuario');
+
+CREATE TRIGGER reduce_stock_after_insert
+AFTER INSERT ON pedidos
+FOR EACH ROW
+BEGIN
+    -- Actualiza el stock restando la cantidad pedida
+    UPDATE productos
+    SET stock = stock - NEW.cantidad
+    WHERE id_producto = NEW.id_producto;
+END;
