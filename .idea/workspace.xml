@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55a3ca65-740f-40aa-9e49-fa2d76cea832" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/controller/dashboardController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/routes/dashboardRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front_unete/src/services/dashboard_api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/components/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/pages/AdminReport.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/pages/AdminReport.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front_unete/src/pages/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/pages/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_unete/src/services/products_api.js" beforeDir="false" afterPath="$PROJECT_DIR$/front_unete/src/services/products_api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +116,7 @@
       <workItem from="1738469838727" duration="269000" />
       <workItem from="1738470148882" duration="2871000" />
       <workItem from="1738528196189" duration="29756000" />
-      <workItem from="1738584065001" duration="6045000" />
+      <workItem from="1738584065001" duration="8123000" />
     </task>
     <servers />
   </component>

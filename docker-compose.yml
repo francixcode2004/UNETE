@@ -14,7 +14,15 @@ services:
       - "3306:3306"
     networks:
       - red-unete
-
+  sc_backend:
+    build:
+      context: ./backend
+    container_name: service_unete
+    restart: on-failure
+    ports:
+      - "3000:3000"
+    networks:
+      - red-unete
 
 networks:
   red-unete:

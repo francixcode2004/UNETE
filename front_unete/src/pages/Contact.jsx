@@ -175,7 +175,11 @@ function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <CompanyHistory
                         title="Nuestra Historia"
-                        description="UNETE nació en 2020 con la visión de revolucionar la industria de la belleza. Desde entonces, nos hemos dedicado a ofrecer productos de alta calidad y un servicio excepcional a nuestros clientes. Nuestra pasión por la innovación y el compromiso con la satisfacción del cliente nos han convertido en líderes del mercado."
+                        description="UNETE nació
+                        en 2025 con la visión de revolucionar la industria de la belleza y moda.
+                        Desde entonces, nos hemos dedicado a ofrecer productos de alta calidad
+                        y un servicio excepcional a nuestros clientes. Nuestra pasión por la innovación
+                         y el compromiso con la satisfacción del cliente nos han convertido en líderes del mercado."
                     />
                     <div className="space-y-4">
                         <ContactInfo
